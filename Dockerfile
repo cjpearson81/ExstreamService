@@ -16,6 +16,8 @@ USER 1001
 
 EXPOSE 9090
 
-COPY ./build/libs/ExstreamService.jar /opt/openshift
+#COPY ./build/libs/ExstreamService.jar /opt/openshift
+
+ADD ./build/libs/ExstreamService.jar /opt/openshift/
 
 CMD ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/opt/openshift/ExstreamService.jar"]
